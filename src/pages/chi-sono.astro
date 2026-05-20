@@ -2,24 +2,110 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Chi Sono" description="Alessio Cervara — freelance Meta Ads Specialist con 7+ anni di esperienza e €500k+ di budget gestito per brand italiani moda e lifestyle.">
-  <section class="placeholder">
-    <div class="container">
-      <p class="eyebrow">In arrivo</p>
-      <h1 class="title">Chi Sono</h1>
-      <p class="body">
-        Questa sezione è in costruzione. Nel frattempo, <a href="/contatti">scrivimi direttamente</a> o dai un'occhiata ai <a href="/case-study">risultati</a>.
-      </p>
-      <a href="/" class="back">← Torna alla home</a>
+<Layout title="Chi Sono" description="Alessio Cervara — freelance Meta & Pinterest Ads Specialist. 10+ anni, €3M+ di budget gestito per brand italiani moda, lusso e lifestyle.">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <p class="eyebrow hero-reveal" style="animation-delay: 0ms">Chi sono</p>
+        <h1 class="hero-headline hero-reveal" style="animation-delay: 150ms">Ciao, sono Alessio.</h1>
+        <p class="hero-sub hero-reveal" style="animation-delay: 300ms">Meta Ads Specialist. Lavoro con e-commerce e local business italiani per trasformare il budget pubblicitario in fatturato reale.</p>
+      </div>
+      <div class="hero-photo hero-reveal" style="animation-delay: 200ms">
+        <img
+          src="/foto profilo.png"
+          alt="Alessio Cervara — Meta Ads Specialist"
+          class="profile-photo"
+          width="280"
+          height="360"
+          loading="eager"
+        />
+      </div>
     </div>
   </section>
+
+  <!-- NUMERI -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid animate-stagger">
+        <div class="stat animate-stagger-item">
+          <span
+            class="stat-number animate-count"
+            data-count-target="10"
+            data-count-suffix="+"
+          >10+</span>
+          <span class="stat-label">anni di esperienza</span>
+        </div>
+        <div class="stat animate-stagger-item">
+          <span
+            class="stat-number animate-count"
+            data-count-prefix="€"
+            data-count-target="3"
+            data-count-suffix="M+"
+          >€3M+</span>
+          <span class="stat-label">di budget gestito</span>
+        </div>
+        <div class="stat stat--brands animate-stagger-item">
+          <span
+            class="stat-number animate-count"
+            data-count-target="8"
+          >8</span>
+          <span class="stat-label">brand attivi</span>
+          <p class="stat-brands">One Cashmere · Mason's · Emma Silk · Le Trecce di Nina · Mimmù · Sportlife · Pitags · Galuja</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTO -->
+  <section class="about">
+    <div class="container about-inner">
+      <div class="about-body">
+        <p class="animate-fade-up">Non sono un'agenzia. Sono un professionista che segue personalmente ogni account, conosce i dati a memoria e lavora con un obiettivo solo: far crescere il tuo business.</p>
+        <p class="animate-fade-up">Ho iniziato a fare advertising quando i campaign manager si ottimizzavano a mano e gli algoritmi erano ancora una promessa. Da allora ho gestito oltre tre milioni di euro di budget per brand italiani di moda, lusso, pet e lifestyle — senza mai delegare la parte strategica.</p>
+        <p class="animate-fade-up">Il mio approccio è semplice: broad targeting, creatività come leva principale, decisioni basate sui dati. Niente ottimizzazioni a sensazione, niente reporting che nasconde i problemi.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROCCIO -->
+  <section class="approach">
+    <div class="container">
+      <p class="eyebrow animate-fade-up">Come lavoro</p>
+      <span class="animate-line" aria-hidden="true"></span>
+      <div class="approach-grid animate-stagger">
+        <div class="approach-card animate-stagger-item">
+          <span class="approach-num">01</span>
+          <h3 class="approach-title">Creative is the targeting</h3>
+          <p class="approach-body">La creatività non è estetica, è strategia. È il modo più potente per raggiungere le persone giuste — più efficace di qualsiasi segmentazione manuale.</p>
+        </div>
+        <div class="approach-card animate-stagger-item">
+          <span class="approach-num">02</span>
+          <h3 class="approach-title">Broad targeting</h3>
+          <p class="approach-body">Meno vincoli agli algoritmi, più spazio per trovare i clienti che convertono davvero. L'iper-segmentazione è un'abitudine che costa soldi.</p>
+        </div>
+        <div class="approach-card animate-stagger-item">
+          <span class="approach-num">03</span>
+          <h3 class="approach-title">Data-driven</h3>
+          <p class="approach-body">Ogni decisione parte dai numeri. Leggo i dati, li interpreto nel contesto del business e agisco. Niente ottimizzazioni a sensazione.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container cta-inner animate-fade-up">
+      <h2 class="cta-title">Vuoi lavorare con me?</h2>
+      <p class="cta-sub">Lavoro con un numero limitato di clienti alla volta. Se stai cercando qualcuno che segua il tuo account con la stessa attenzione che riserveresti tu, parliamoci.</p>
+      <a href="/contatti" class="btn">Parliamoci</a>
+    </div>
+  </section>
+
 </Layout>
 
 <style>
-  .placeholder {
-    padding: 8rem 0;
-    min-height: 60vh;
-  }
   .eyebrow {
     font-size: 0.72rem;
     font-weight: 500;
@@ -28,28 +114,187 @@ import Layout from '../layouts/Layout.astro';
     color: var(--color-mid);
     margin-bottom: 1.5rem;
   }
-  .title {
+
+  /* HERO */
+  .hero {
+    padding: 6rem 0 4rem;
+    border-bottom: 1px solid var(--color-divider);
+  }
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4rem;
+    align-items: center;
+  }
+  .hero-headline {
     font-family: var(--font-serif);
-    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 400;
     letter-spacing: -0.025em;
+    line-height: 1.1;
     margin-bottom: 1.5rem;
+  }
+  .hero-sub {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    color: var(--color-mid);
+    font-weight: 300;
+    line-height: 1.7;
+    max-width: 480px;
+  }
+  .profile-photo {
+    display: block;
+    width: 280px;
+    height: 360px;
+    object-fit: cover;
+    object-position: center top;
+    flex-shrink: 0;
+  }
+
+  /* STATS */
+  .stats {
+    padding: 5rem 0;
+    border-bottom: 1px solid var(--color-divider);
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .stat {
+    padding: 2rem 0;
+    border-top: 2px solid var(--color-text);
+  }
+  .stat-number {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    color: var(--color-accent);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .stat-label {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--color-mid);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.75rem;
+  }
+  .stat-brands {
+    font-size: 0.8rem;
+    color: var(--color-mid);
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  /* ABOUT */
+  .about {
+    padding: 6rem 0;
+    border-bottom: 1px solid var(--color-divider);
+  }
+  .about-inner {
+    max-width: 640px;
+  }
+  .about-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .about-body p {
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--color-text);
+  }
+  .about-body p:first-child {
+    font-size: 1.2rem;
     font-weight: 400;
   }
-  .body {
+
+  /* APPROACH */
+  .approach {
+    padding: 6rem 0;
+    border-bottom: 1px solid var(--color-divider);
+  }
+  .approach-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin-top: 3rem;
+  }
+  .approach-card {
+    padding: 2rem 0;
+    border-top: 1px solid var(--color-divider);
+  }
+  .approach-num {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+  }
+  .approach-title {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    font-weight: 400;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
+  .approach-body {
+    font-size: 0.9rem;
+    color: var(--color-mid);
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  /* CTA */
+  .cta {
+    padding: 7rem 0;
+  }
+  .cta-inner {
+    text-align: center;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+  .cta-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 400;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.02em;
+  }
+  .cta-sub {
     font-size: 1rem;
     color: var(--color-mid);
     font-weight: 300;
-    margin-bottom: 2.5rem;
     line-height: 1.7;
+    margin-bottom: 2.5rem;
   }
-  .body a {
-    color: var(--color-accent);
-    border-bottom: 1px solid var(--color-accent);
-  }
-  .back {
+  .btn {
+    display: inline-block;
+    padding: 0.875rem 2.25rem;
+    background: var(--color-text);
+    color: var(--color-bg);
     font-size: 0.875rem;
-    color: var(--color-mid);
-    transition: color 0.2s;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    transition: background 0.2s, color 0.2s;
   }
-  .back:hover { color: var(--color-text); }
+  .btn:hover { background: var(--color-accent); }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    .hero { padding: 4rem 0 3rem; }
+    .hero-inner {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    .hero-photo { order: -1; }
+    .photo-placeholder { width: 140px; height: 180px; }
+    .stats-grid { grid-template-columns: 1fr; gap: 0; }
+    .approach-grid { grid-template-columns: 1fr; gap: 0; }
+    .approach-card { padding: 1.75rem 0; }
+  }
 </style>

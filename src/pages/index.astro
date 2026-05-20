@@ -1,19 +1,585 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import SocialProof from '../components/SocialProof.astro';
-import HowIWork from '../components/HowIWork.astro';
-import CaseStudyPreview from '../components/CaseStudyPreview.astro';
-import FinalCTA from '../components/FinalCTA.astro';
 ---
 
 <Layout
   title="Meta Ads Specialist"
-  description="Alessio Cervara — Meta Ads Specialist per e-commerce italiani. Gestisco oltre €500k/anno di budget pubblicitario per brand moda, lusso e lifestyle."
+  description="Alessio Cervara — Meta & Pinterest Ads Specialist per e-commerce italiani. €3M+ di budget gestito per brand moda, lusso e lifestyle."
 >
-  <Hero />
-  <SocialProof />
-  <HowIWork />
-  <CaseStudyPreview />
-  <FinalCTA />
+
+  <!-- ═══════════════════════════════════════════
+       HERO  (animazione al caricamento, non scroll)
+  ═══════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <img
+        src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1600&q=80&auto=format&fit=crop"
+        alt=""
+        class="hero-bg-img"
+        loading="eager"
+      />
+    </div>
+    <div class="container">
+      <p class="eyebrow hero-reveal" style="animation-delay: 0ms">Meta &amp; Pinterest Ads Specialist</p>
+      <h1 class="hero-headline hero-reveal" style="animation-delay: 150ms">
+        Più fatturato.<br />
+        Con Meta Ads<br />
+        <em>che funzionano davvero.</em>
+      </h1>
+      <p class="hero-sub hero-reveal" style="animation-delay: 300ms">Gestione campagne Meta Ads per e-commerce e local business italiani.</p>
+      <div class="hero-ctas hero-reveal" style="animation-delay: 450ms">
+        <a href="/contatti" class="btn-primary">Parliamoci</a>
+        <a href="/case-study" class="btn-ghost">Guarda i risultati →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CLIENTI
+  ═══════════════════════════════════════════ -->
+  <section class="clients animate-fade-up">
+    <div class="container">
+      <p class="clients-label">Hanno lavorato con me</p>
+      <p class="clients-names">One Cashmere · Mason's · Emma Silk · Le Trecce di Nina · Mimmù · Sportlife · Galuja</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       STAT
+  ═══════════════════════════════════════════ -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid animate-stagger">
+        <div class="stat animate-stagger-item">
+          <span
+            class="stat-number animate-count"
+            data-count-target="10"
+            data-count-suffix="+"
+          >10+</span>
+          <span class="stat-label">anni di esperienza</span>
+        </div>
+        <div class="stat animate-stagger-item">
+          <span
+            class="stat-number animate-count"
+            data-count-prefix="€"
+            data-count-target="3"
+            data-count-suffix="M+"
+          >€3M+</span>
+          <span class="stat-label">di budget gestito</span>
+        </div>
+        <div class="stat animate-stagger-item">
+          <span
+            class="stat-number animate-count"
+            data-count-target="8"
+          >8</span>
+          <span class="stat-label">brand attivi seguiti</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SERVIZI
+  ═══════════════════════════════════════════ -->
+  <section class="services">
+    <div class="container">
+      <p class="section-label animate-fade-up">Cosa faccio</p>
+      <ul class="services-list animate-stagger">
+        <li class="animate-stagger-item">
+          <a href="/servizi" class="service-row">
+            <span class="service-name">Meta Ads E-commerce</span>
+            <span class="service-arrow">→</span>
+          </a>
+        </li>
+        <li class="animate-stagger-item">
+          <a href="/servizi" class="service-row">
+            <span class="service-name">Meta Ads Local Business</span>
+            <span class="service-arrow">→</span>
+          </a>
+        </li>
+        <li class="animate-stagger-item">
+          <a href="/servizi" class="service-row">
+            <span class="service-name">Pinterest Ads</span>
+            <span class="service-arrow">→</span>
+          </a>
+        </li>
+        <li class="animate-stagger-item">
+          <a href="/servizi" class="service-row">
+            <span class="service-name">Social Media Management</span>
+            <span class="service-arrow">→</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       COME LAVORO
+  ═══════════════════════════════════════════ -->
+  <section class="how">
+    <div class="container">
+      <h2 class="how-headline animate-fade-up">Come lavoro.</h2>
+      <span class="animate-line" aria-hidden="true"></span>
+      <div class="how-steps animate-stagger">
+        <div class="how-step animate-stagger-item">
+          <span class="step-num">01</span>
+          <div class="step-body">
+            <h3 class="step-title">Analisi</h3>
+            <p class="step-desc">Prima capisco il tuo business, i dati e gli obiettivi. Nessuna campagna parte senza una base solida.</p>
+          </div>
+        </div>
+        <div class="how-step animate-stagger-item">
+          <span class="step-num">02</span>
+          <div class="step-body">
+            <h3 class="step-title">Strategia e creatività</h3>
+            <p class="step-desc">Definisco struttura, angoli creativi e messaggi. La creatività è il targeting.</p>
+          </div>
+        </div>
+        <div class="how-step animate-stagger-item">
+          <span class="step-num">03</span>
+          <div class="step-body">
+            <h3 class="step-title">Ottimizzazione continua</h3>
+            <p class="step-desc">Monitoro, testo e miglioro ogni settimana. Le decisioni le prendo sui dati, non a sensazione.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CASE STUDY PREVIEW
+  ═══════════════════════════════════════════ -->
+  <section class="cases">
+    <div class="container">
+      <div class="cases-header animate-fade-up">
+        <p class="section-label">Risultati recenti</p>
+        <a href="/case-study" class="cases-all">Vedi tutti →</a>
+      </div>
+      <div class="cases-grid animate-stagger">
+        <a href="/case-study" class="case-card animate-stagger-item">
+          <div class="case-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&q=80&auto=format&fit=crop"
+              alt="Campagna Meta Ads luxury fashion — One Cashmere"
+              class="case-img"
+              loading="lazy"
+            />
+          </div>
+          <p class="case-brand">One Cashmere</p>
+          <p class="case-sector">Cashmere lusso · Meta Ads + Pinterest</p>
+          <p class="case-result">+43%<span>ROAS</span></p>
+          <p class="case-desc">Ridefinizione completa della struttura campagne e angoli creativi per un brand premium nel segmento lusso.</p>
+        </a>
+        <a href="/case-study" class="case-card animate-stagger-item">
+          <div class="case-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80&auto=format&fit=crop"
+              alt="Campagna Meta Ads abbigliamento — Mason's"
+              class="case-img"
+              loading="lazy"
+            />
+          </div>
+          <p class="case-brand">Mason's</p>
+          <p class="case-sector">Abbigliamento · Meta Ads + Pinterest</p>
+          <p class="case-result">-38%<span>CPR</span></p>
+          <p class="case-desc">Ottimizzazione del costo per risultato attraverso broad targeting e test creativi sistematici.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CTA FINALE
+  ═══════════════════════════════════════════ -->
+  <section class="final-cta">
+    <div class="container final-cta-inner animate-fade-up">
+      <h2 class="final-cta-headline">Pronto a scalare?</h2>
+      <p class="final-cta-sub">Raccontami il tuo progetto.</p>
+      <a href="/contatti" class="btn-primary">Parliamoci</a>
+    </div>
+  </section>
+
 </Layout>
+
+<style>
+  /* ─── SHARED ──────────────────────────────── */
+  .eyebrow,
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-mid);
+    margin-bottom: 1.5rem;
+  }
+
+  /* ─── HERO ────────────────────────────────── */
+  .hero {
+    padding: 7rem 0 6rem;
+    border-bottom: 1px solid var(--color-divider);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--color-bg);
+    opacity: 0.88;
+  }
+  .hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .hero .container {
+    position: relative;
+    z-index: 1;
+  }
+  .hero .eyebrow {
+    margin-bottom: 2rem;
+  }
+  .hero-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin-bottom: 2rem;
+    max-width: 14ch;
+  }
+  .hero-headline em {
+    font-style: italic;
+    color: var(--color-mid);
+  }
+  .hero-sub {
+    font-size: 1rem;
+    color: var(--color-mid);
+    font-weight: 300;
+    margin-bottom: 3rem;
+    max-width: 420px;
+  }
+  .hero-ctas {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    display: inline-block;
+    padding: 0.875rem 2rem;
+    background: var(--color-accent);
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    transition: opacity 0.2s;
+  }
+  .btn-primary:hover { opacity: 0.85; }
+  .btn-ghost {
+    font-size: 0.9rem;
+    color: var(--color-text);
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+  .btn-ghost:hover { color: var(--color-accent); }
+
+  /* ─── CLIENTS ─────────────────────────────── */
+  .clients {
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--color-divider);
+  }
+  .clients .container {
+    display: flex;
+    align-items: baseline;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+  }
+  .clients-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-mid);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .clients-names {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    color: var(--color-text);
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+  }
+
+  /* ─── STATS ───────────────────────────────── */
+  .stats {
+    padding: 5rem 0;
+    border-bottom: 1px solid var(--color-divider);
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+  .stat {
+    padding: 0 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-right: 1px solid var(--color-divider);
+  }
+  .stat:first-child { padding-left: 0; }
+  .stat:last-child { border-right: none; }
+  .stat-number {
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    color: var(--color-accent);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--color-mid);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+  }
+
+  /* ─── SERVICES ────────────────────────────── */
+  .services {
+    padding: 5rem 0;
+    border-bottom: 1px solid var(--color-divider);
+  }
+  .services-list {
+    list-style: none;
+    border-top: 1px solid var(--color-divider);
+  }
+  .service-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--color-divider);
+    transition: opacity 0.2s;
+  }
+  .service-row:hover { opacity: 0.5; }
+  .service-name {
+    font-family: var(--font-serif);
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  .service-arrow {
+    font-size: 1.25rem;
+    color: var(--color-mid);
+    transition: transform 0.2s, color 0.2s;
+  }
+  .service-row:hover .service-arrow {
+    transform: translateX(4px);
+    color: var(--color-accent);
+  }
+
+  /* ─── HOW I WORK ──────────────────────────── */
+  .how {
+    padding: 6rem 0;
+    border-bottom: 1px solid var(--color-divider);
+  }
+  .how-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    margin-bottom: 2rem;
+  }
+  .how-steps {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--color-divider);
+  }
+  .how-step {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 2rem;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--color-divider);
+    align-items: start;
+  }
+  .step-num {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    color: var(--color-accent);
+    font-style: italic;
+    padding-top: 0.2rem;
+  }
+  .step-title {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+  }
+  .step-desc {
+    font-size: 0.9rem;
+    color: var(--color-mid);
+    font-weight: 300;
+    line-height: 1.75;
+    max-width: 480px;
+  }
+
+  /* ─── CASE STUDY PREVIEW ──────────────────── */
+  .cases {
+    padding: 6rem 0;
+    border-bottom: 1px solid var(--color-divider);
+  }
+  .cases-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+  }
+  .cases-header .section-label { margin-bottom: 0; }
+  .cases-all {
+    font-size: 0.875rem;
+    color: var(--color-mid);
+    transition: color 0.2s;
+  }
+  .cases-all:hover { color: var(--color-text); }
+  .cases-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .case-card {
+    border: 1px solid var(--color-divider);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    transition: border-color 0.2s;
+    overflow: hidden;
+  }
+  .case-card:hover { border-color: var(--color-mid); }
+  .case-img-wrap {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+  .case-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    display: block;
+  }
+  .case-card:hover .case-img { transform: scale(1.03); }
+  .case-brand {
+    margin-top: 1.75rem;
+    padding: 0 2rem;
+  }
+  .case-brand {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--color-text);
+    margin-bottom: 0.1rem;
+  }
+  .case-sector {
+    font-size: 0.75rem;
+    color: var(--color-mid);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    font-weight: 400;
+    margin-bottom: 1.25rem;
+    padding: 0 2rem;
+  }
+  .case-result {
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    color: var(--color-accent);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    padding: 0 2rem;
+  }
+  .case-result span {
+    font-size: 0.8rem;
+    font-family: var(--font-sans);
+    color: var(--color-mid);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+  }
+  .case-desc {
+    font-size: 0.875rem;
+    color: var(--color-mid);
+    font-weight: 300;
+    line-height: 1.7;
+    margin-top: 0.75rem;
+    padding: 0 2rem 2rem;
+  }
+
+  /* ─── FINAL CTA ───────────────────────────── */
+  .final-cta {
+    padding: 8rem 0;
+  }
+  .final-cta-inner {
+    text-align: center;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .final-cta-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    margin-bottom: 0.75rem;
+  }
+  .final-cta-sub {
+    font-size: 1rem;
+    color: var(--color-mid);
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+  }
+
+  /* ─── MOBILE ──────────────────────────────── */
+  @media (max-width: 768px) {
+    .hero { padding: 4.5rem 0 4rem; }
+
+    .clients .container {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .stats-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    .stat {
+      padding: 0;
+      border-right: none;
+      border-bottom: 1px solid var(--color-divider);
+      padding-bottom: 2rem;
+    }
+    .stat:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .how-step {
+      grid-template-columns: 60px 1fr;
+      gap: 1.25rem;
+    }
+
+    .cases-grid { grid-template-columns: 1fr; }
+
+    .final-cta { padding: 5rem 0; }
+  }
+</style>
