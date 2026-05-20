@@ -1,0 +1,136 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contatti" description="Contatta Alessio Cervara per una consulenza Meta Ads gratuita. Scrivimi via email o LinkedIn.">
+  <section class="contacts">
+    <div class="container">
+      <div class="inner">
+        <p class="eyebrow">Parliamoci</p>
+        <h1 class="title">
+          Una call di 30 minuti.<br />
+          <em>Senza pressioni.</em>
+        </h1>
+        <p class="body">
+          Analizziamo insieme la situazione attuale — campagne, budget, obiettivi.
+          Se posso aiutarti, te lo dico. Se non sono la persona giusta, te lo dico lo stesso.
+        </p>
+
+        <div class="contact-options">
+          <a href="mailto:alessiocervara@live.it" class="contact-item">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">alessiocervara@live.it</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/alessiocervara"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-item"
+          >
+            <span class="contact-label">LinkedIn</span>
+            <span class="contact-value">linkedin.com/in/alessiocervara →</span>
+          </a>
+        </div>
+
+        <p class="note">
+          Rispondo entro 24 ore nei giorni lavorativi.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .contacts {
+    padding: 7rem 0;
+    min-height: 70vh;
+  }
+
+  .inner {
+    max-width: 600px;
+  }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 1.5rem;
+  }
+
+  .title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+  }
+
+  .title em {
+    font-style: italic;
+    color: var(--color-mid);
+  }
+
+  .body {
+    font-size: 1rem;
+    color: var(--color-mid);
+    font-weight: 300;
+    line-height: 1.75;
+    margin-bottom: 3rem;
+  }
+
+  .contact-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid var(--color-divider);
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: baseline;
+    gap: 2rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--color-divider);
+    transition: opacity 0.2s ease;
+  }
+  .contact-item:hover { opacity: 0.6; }
+
+  .contact-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-mid);
+    min-width: 80px;
+  }
+
+  .contact-value {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    color: var(--color-text);
+    letter-spacing: -0.01em;
+  }
+
+  .note {
+    font-size: 0.825rem;
+    color: var(--color-mid);
+    font-weight: 300;
+  }
+
+  @media (max-width: 768px) {
+    .contacts {
+      padding: 4.5rem 0;
+    }
+    .contact-item {
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .contact-value {
+      font-size: 1.05rem;
+    }
+  }
+</style>

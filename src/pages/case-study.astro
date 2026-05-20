@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Case Study" description="Case study e risultati concreti: come Alessio Cervara ha migliorato ROAS e CPA per brand e-commerce italiani.">
+  <section class="placeholder">
+    <div class="container">
+      <p class="eyebrow">In arrivo</p>
+      <h1 class="title">Case Study</h1>
+      <p class="body">
+        I case study completi sono in costruzione. I risultati in anteprima sono disponibili nella <a href="/">home page</a>.
+      </p>
+      <a href="/" class="back">← Torna alla home</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .placeholder {
+    padding: 8rem 0;
+    min-height: 60vh;
+  }
+  .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-mid);
+    margin-bottom: 1.5rem;
+  }
+  .title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    letter-spacing: -0.025em;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+  }
+  .body {
+    font-size: 1rem;
+    color: var(--color-mid);
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+  }
+  .body a {
+    color: var(--color-accent);
+    border-bottom: 1px solid var(--color-accent);
+  }
+  .back {
+    font-size: 0.875rem;
+    color: var(--color-mid);
+    transition: color 0.2s;
+  }
+  .back:hover { color: var(--color-text); }
+</style>

@@ -1,0 +1,112 @@
+---
+const principles = [
+  {
+    number: '01',
+    title: 'Creative is the targeting',
+    body: 'Il creative non è estetica — è lo strumento che raggiunge le persone giuste. Un annuncio ben costruito definisce il pubblico meglio di qualsiasi regola di targeting manuale.',
+  },
+  {
+    number: '02',
+    title: 'Broad targeting, risultati precisi',
+    body: "L'algoritmo di Meta lavora meglio con meno vincoli. Pubblici ampi, segnali di conversione chiari e budget adeguato: questa è la combinazione che scala.",
+  },
+  {
+    number: '03',
+    title: 'Decisioni basate sui dati',
+    body: 'Ogni ottimizzazione parte dall\'analisi. ROAS, CPA, frequenza, saturazione: leggo i numeri prima di toccare le campagne. Nessuna modifica per intuizione.',
+  },
+];
+---
+
+<section class="how-i-work">
+  <div class="container">
+    <header class="section-header">
+      <h2 class="section-title">Come lavoro</h2>
+      <p class="section-sub">Tre principi che guidano ogni campagna, per ogni cliente.</p>
+    </header>
+
+    <div class="grid">
+      {principles.map((p) => (
+        <div class="principle">
+          <span class="num">{p.number}</span>
+          <h3 class="principle-title">{p.title}</h3>
+          <p class="principle-body">{p.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .how-i-work {
+    padding: 7rem 0;
+    border-bottom: 1px solid var(--color-divider);
+  }
+
+  .section-header {
+    max-width: 600px;
+    margin-bottom: 4rem;
+  }
+
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+    font-weight: 400;
+  }
+
+  .section-sub {
+    font-size: 1rem;
+    color: var(--color-mid);
+    font-weight: 300;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+
+  .principle {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-divider);
+  }
+
+  .num {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--color-accent);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .principle-title {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    font-weight: 400;
+  }
+
+  .principle-body {
+    font-size: 0.9rem;
+    color: var(--color-mid);
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  @media (max-width: 900px) {
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    .how-i-work {
+      padding: 4.5rem 0;
+    }
+  }
+</style>

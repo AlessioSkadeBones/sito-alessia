@@ -1,0 +1,133 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">Alessio Cervara</a>
+        <p class="footer-tagline">
+          Meta Ads Specialist<br />
+          per e-commerce italiani
+        </p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer">
+        <p class="footer-nav-label">Navigazione</p>
+        <ul>
+          <li><a href="/servizi">Servizi</a></li>
+          <li><a href="/case-study">Case Study</a></li>
+          <li><a href="/chi-sono">Chi Sono</a></li>
+          <li><a href="/contatti">Contatti</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-contact">
+        <p class="footer-nav-label">Contatti</p>
+        <a href="mailto:alessiocervara@live.it">alessiocervara@live.it</a>
+        <a
+          href="https://www.linkedin.com/in/alessiocervara"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn →
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© {year} Alessio Cervara — P.IVA 01426400451 — Carrara (MS)</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--color-divider);
+    padding: 4rem 0 2.5rem;
+    margin-top: auto;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .footer-logo {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: var(--color-text);
+    display: block;
+    margin-bottom: 0.75rem;
+    transition: opacity 0.2s ease;
+  }
+  .footer-logo:hover { opacity: 0.6; }
+
+  .footer-tagline {
+    font-size: 0.875rem;
+    color: var(--color-mid);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .footer-nav-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-mid);
+    margin-bottom: 1rem;
+  }
+
+  .footer-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .footer-nav a,
+  .footer-contact a {
+    font-size: 0.875rem;
+    color: var(--color-mid);
+    transition: color 0.2s ease;
+    display: block;
+  }
+  .footer-nav a:hover,
+  .footer-contact a:hover {
+    color: var(--color-text);
+  }
+
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+  .footer-contact .footer-nav-label {
+    margin-bottom: 1rem;
+  }
+
+  .footer-bottom {
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-divider);
+  }
+
+  .footer-bottom p {
+    font-size: 0.78rem;
+    color: var(--color-mid);
+    letter-spacing: 0.01em;
+  }
+
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .footer-brand {
+      grid-column: 1 / -1;
+    }
+  }
+</style>

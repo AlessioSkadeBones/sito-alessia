@@ -1,0 +1,166 @@
+---
+---
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <p class="eyebrow">Meta Ads Specialist · Dal 2017</p>
+
+      <h1 class="headline">
+        Più fatturato<br />dal tuo e-commerce.<br />
+        <em>Con Meta Ads che<br />funzionano davvero.</em>
+      </h1>
+
+      <p class="subtitle">
+        Broad targeting, creative is the targeting, decisioni basate sui dati.<br />
+        Nessuna formula magica — solo metodo, test e scalabilità.
+      </p>
+
+      <div class="actions">
+        <a href="/contatti" class="btn-primary">Richiedi una consulenza gratuita</a>
+        <a href="/case-study" class="btn-secondary">Guarda i risultati →</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-number">€500k+</span>
+          <span class="stat-label">Budget ads / anno</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">7+</span>
+          <span class="stat-label">Anni di esperienza</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">8</span>
+          <span class="stat-label">Brand attivi</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding: 7rem 0 6rem;
+    border-bottom: 1px solid var(--color-divider);
+  }
+
+  .hero-inner {
+    max-width: 840px;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-mid);
+    margin-bottom: 1.75rem;
+  }
+
+  .headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2.75rem, 5.5vw, 4.5rem);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    color: var(--color-text);
+    margin-bottom: 1.75rem;
+  }
+
+  .headline em {
+    font-style: italic;
+    color: var(--color-accent);
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: var(--color-mid);
+    line-height: 1.75;
+    max-width: 500px;
+    margin-bottom: 2.75rem;
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--color-accent);
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.85rem 1.75rem;
+    letter-spacing: 0.01em;
+    border-radius: 2px;
+    transition: opacity 0.2s ease;
+  }
+  .btn-primary:hover { opacity: 0.85; }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--color-text);
+    padding-bottom: 2px;
+    border-bottom: 1px solid var(--color-text);
+    transition: opacity 0.2s ease;
+  }
+  .btn-secondary:hover { opacity: 0.55; }
+
+  .stats {
+    display: flex;
+    gap: 3.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--color-divider);
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .stat-number {
+    font-family: var(--font-serif);
+    font-size: 1.85rem;
+    line-height: 1;
+    color: var(--color-text);
+    letter-spacing: -0.02em;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--color-mid);
+    letter-spacing: 0.03em;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 4rem 0;
+    }
+    .headline {
+      font-size: clamp(2.25rem, 8vw, 2.75rem);
+    }
+    .subtitle {
+      font-size: 0.95rem;
+    }
+    .actions {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.25rem;
+    }
+    .stats {
+      gap: 2rem;
+    }
+  }
+</style>

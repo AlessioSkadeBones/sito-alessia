@@ -1,0 +1,73 @@
+---
+const clients = [
+  { name: 'One Cashmere', sector: 'Cashmere Lusso' },
+  { name: "Mason's", sector: 'Abbigliamento' },
+  { name: 'Emma Silk', sector: 'Seta Lusso' },
+  { name: 'Le Trecce di Nina', sector: 'Pet' },
+  { name: 'Mimmù', sector: 'Calzature' },
+  { name: 'Sportlife', sector: 'Sportswear' },
+];
+---
+
+<section class="social-proof">
+  <div class="container">
+    <p class="label">Brand che mi hanno scelto</p>
+    <div class="strip">
+      {clients.map((client) => (
+        <div class="client">
+          <span class="client-name">{client.name}</span>
+          <span class="client-sector">{client.sector}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .social-proof {
+    padding: 3.5rem 0;
+    border-bottom: 1px solid var(--color-divider);
+  }
+
+  .label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-mid);
+    margin-bottom: 2rem;
+  }
+
+  .strip {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .client {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .client-name {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    color: var(--color-text);
+    line-height: 1.2;
+  }
+
+  .client-sector {
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-mid);
+  }
+
+  @media (max-width: 768px) {
+    .strip {
+      gap: 1.75rem 2.5rem;
+    }
+  }
+</style>

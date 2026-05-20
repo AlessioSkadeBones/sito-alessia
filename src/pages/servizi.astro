@@ -1,0 +1,524 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+interface Package {
+  name: string;
+  description: string;
+  features: string[];
+  featured?: boolean;
+  specialFirst?: boolean;
+}
+
+const mainPackages: Package[] = [
+  {
+    name: 'Essential',
+    description: 'Il punto di partenza per chi vuole campagne Meta strutturate e monitorate con costanza.',
+    features: [
+      'Gestione strategica di 1 canale principale (Meta Ads)',
+      'Pianificazione mensile delle priorità pubblicitarie',
+      'Ottimizzazione campagne e controllo budget',
+      'Report mensile sintetico con risultati e prossime azioni',
+      'Comunicazione asincrona e 1 call strategica mensile',
+      'Budget ADV escluso dalla fee',
+    ],
+  },
+  {
+    name: 'Growth',
+    description: 'Per chi vuole scalare. Strategia, direzione creativa e ottimizzazione continua su Meta Ads.',
+    features: [
+      'Gestione strategica campagne Meta Ads',
+      'Direzione creativa: angoli, offerte, hook e test',
+      'Coordinamento tra piano editoriale e campagne advertising',
+      'Ottimizzazione continuativa di campagne, pubblici, creatività e budget',
+      "Report mensile con analisi, insight e piano d'azione",
+      '1 call strategica settimanale',
+      'Budget ADV escluso dalla fee',
+    ],
+    featured: true,
+  },
+  {
+    name: 'Performance',
+    description: 'Full-funnel, test strutturati e monitoraggio ravvicinato. Per chi vuole il massimo.',
+    features: [
+      'Tutto incluso nel Growth',
+      'Strategia full-funnel: acquisizione, retargeting e conversione',
+      'Test creativi e commerciali strutturati',
+      'Revisione landing page, sito o funnel con indicazioni operative',
+      'Priorità operativa e monitoraggio ravvicinato',
+      '1 call strategica settimanale',
+      'Budget ADV escluso dalla fee',
+    ],
+    specialFirst: true,
+  },
+  {
+    name: 'Social Media Management',
+    description: 'Gestione editoriale completa dei canali organici, coordinata con la strategia advertising.',
+    features: [
+      'Gestione editoriale dei canali social organici',
+      'Piano editoriale mensile con rubriche, format e calendario',
+      'Copywriting per post, reel, stories e contenuti ricorrenti',
+      'Coordinamento con asset del cliente o creator esterni',
+      'Programmazione e pubblicazione contenuti',
+      'Report mensile con insight e prossime azioni',
+      'Produzione foto/video e grafiche avanzate escluse',
+    ],
+  },
+  {
+    name: 'Full Marketing',
+    description: 'Meta Ads, Google Ads e social organici coordinati in un unico piano mensile integrato.',
+    features: [
+      'Gestione coordinata Meta Ads, Google Ads e social organici',
+      'Strategia mensile integrata tra acquisizione, contenuti e remarketing',
+      'Coordinamento operativo dei professionisti coinvolti',
+      'Piano editoriale mensile con priorità e format',
+      'Report mensile unico con risultati e prossime azioni',
+      '1 call strategica settimanale',
+      'Budget ADV, produzione e tool esterni esclusi',
+    ],
+  },
+];
+
+const addons = [
+  {
+    name: 'AI Business Starter',
+    tag: 'Una tantum',
+    description:
+      'Analisi e setup degli strumenti AI più utili per il tuo business, con formazione pratica per il team.',
+    features: [
+      'Analisi processi e individuazione attività automatizzabili',
+      'Setup strumenti AI per marketing, contenuti, customer care o vendite',
+      'Creazione prompt, procedure e workflow per il team',
+      'Formazione pratica sugli strumenti configurati',
+      'Documento operativo finale con istruzioni e sviluppi consigliati',
+    ],
+  },
+  {
+    name: 'Add-on Pinterest Ads',
+    tag: 'In affiancamento',
+    description:
+      'Gestione campagne Pinterest integrata con Meta Ads. Ideale per fashion, lifestyle ed e-commerce visivi.',
+    features: [
+      'Gestione campagne Pinterest in affiancamento a Meta Ads',
+      'Consigliato per fashion, lifestyle ed e-commerce visivi',
+      'Report e ottimizzazioni integrati nel lavoro mensile',
+      'Budget ADV escluso',
+    ],
+  },
+];
+---
+
+<Layout
+  title="Servizi"
+  description="I pacchetti di collaborazione di Alessio Cervara: Meta Ads, Social Media Management, Full Marketing e servizi aggiuntivi per e-commerce italiani."
+>
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="hero-inner">
+        <p class="eyebrow">Servizi</p>
+        <h1 class="page-title">
+          Scegli come vuoi<br />lavorare insieme.
+        </h1>
+        <p class="page-subtitle">
+          Ogni pacchetto è pensato per una fase diversa di crescita.<br />
+          Nessuna soluzione unica per tutti — solo quello che serve davvero.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Packages -->
+  <section class="packages">
+    <div class="container">
+      <div class="packages-grid">
+        {
+          mainPackages.map((pkg) => (
+            <article class:list={['pkg-card', { featured: pkg.featured }]}>
+              {pkg.featured && <span class="badge">Consigliato</span>}
+              <div class="card-head">
+                <h3 class="pkg-name">{pkg.name}</h3>
+                <p class="pkg-desc">{pkg.description}</p>
+              </div>
+              <ul class="features">
+                {pkg.features.map((f, i) => (
+                  <li class:list={[{ special: pkg.specialFirst && i === 0 }]}>{f}</li>
+                ))}
+              </ul>
+              <a
+                href="/contatti"
+                class:list={['pkg-cta', { 'pkg-cta-filled': pkg.featured }]}
+              >
+                Parliamoci
+              </a>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Add-ons -->
+  <section class="addons">
+    <div class="container">
+      <h2 class="addons-title">Servizi aggiuntivi</h2>
+      <div class="addons-grid">
+        {
+          addons.map((addon) => (
+            <article class="addon-card">
+              <div class="addon-head">
+                <span class="addon-tag">{addon.tag}</span>
+                <h3 class="addon-name">{addon.name}</h3>
+                <p class="addon-desc">{addon.description}</p>
+              </div>
+              <ul class="features features-sm">
+                {addon.features.map((f) => (
+                  <li>{f}</li>
+                ))}
+              </ul>
+              <a href="/contatti" class="pkg-cta">Parliamoci</a>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <div class="cta-inner">
+        <p class="cta-eyebrow">Hai dubbi?</p>
+        <h2 class="cta-title">
+          Non sai quale pacchetto<br />fa per te?
+        </h2>
+        <p class="cta-body">
+          Raccontami il tuo progetto, valutiamo insieme la soluzione più adatta.
+        </p>
+        <a href="/contatti" class="cta-btn">Prenota una call gratuita</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* ── Hero ─────────────────────────────────────────── */
+  .page-hero {
+    padding: 5rem 0 4rem;
+    border-bottom: 1px solid var(--color-divider);
+  }
+
+  .hero-inner {
+    max-width: 720px;
+  }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-mid);
+    margin-bottom: 1.5rem;
+  }
+
+  .page-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.25rem, 4.5vw, 3.75rem);
+    letter-spacing: -0.025em;
+    line-height: 1.08;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+  }
+
+  .page-subtitle {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--color-mid);
+    line-height: 1.75;
+  }
+
+  /* ── Packages grid ────────────────────────────────── */
+  .packages {
+    padding: 5rem 0 6rem;
+    border-bottom: 1px solid var(--color-divider);
+  }
+
+  .packages-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .pkg-card {
+    flex: 0 0 calc((100% - 3rem) / 3);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--color-divider);
+    padding: 2rem 2.25rem 2.25rem;
+    transition: border-color 0.2s ease;
+  }
+
+  .pkg-card:hover:not(.featured) {
+    border-color: var(--color-mid);
+  }
+
+  .pkg-card.featured {
+    border-color: var(--color-accent);
+    background-color: rgba(194, 74, 44, 0.03);
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    background-color: var(--color-accent);
+    color: #fff;
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.28rem 0.6rem;
+    border-radius: 2px;
+    margin-bottom: 1.25rem;
+  }
+
+  .card-head {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--color-divider);
+  }
+
+  .pkg-name {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    margin-bottom: 0.6rem;
+    line-height: 1.2;
+  }
+
+  .pkg-desc {
+    font-size: 0.875rem;
+    color: var(--color-mid);
+    font-weight: 300;
+    line-height: 1.65;
+  }
+
+  /* ── Feature list ─────────────────────────────────── */
+  .features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    flex: 1;
+  }
+
+  .features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.845rem;
+    color: var(--color-mid);
+    font-weight: 300;
+    line-height: 1.55;
+  }
+
+  .features li::before {
+    content: '—';
+    color: var(--color-divider);
+    flex-shrink: 0;
+    font-size: 0.8rem;
+    padding-top: 0.1rem;
+  }
+
+  .features li.special {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-text);
+  }
+
+  .features li.special::before {
+    content: '+';
+    color: var(--color-accent);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .features-sm li {
+    font-size: 0.845rem;
+  }
+
+  /* ── Card CTA ─────────────────────────────────────── */
+  .pkg-cta {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text);
+    padding-bottom: 1px;
+    border-bottom: 1px solid var(--color-text);
+    margin-top: 2rem;
+    letter-spacing: 0.01em;
+    transition: opacity 0.2s ease;
+  }
+  .pkg-cta:hover {
+    opacity: 0.5;
+  }
+
+  .pkg-cta-filled {
+    background-color: var(--color-accent);
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-bottom: none;
+    border-radius: 2px;
+  }
+  .pkg-cta-filled:hover {
+    opacity: 0.85;
+  }
+
+  /* ── Add-ons ──────────────────────────────────────── */
+  .addons {
+    padding: 5rem 0 6rem;
+    border-bottom: 1px solid var(--color-divider);
+  }
+
+  .addons-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+  }
+
+  .addons-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .addon-card {
+    border: 1px solid var(--color-divider);
+    padding: 2rem 2.25rem 2.25rem;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.2s ease;
+  }
+  .addon-card:hover {
+    border-color: var(--color-mid);
+  }
+
+  .addon-head {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--color-divider);
+  }
+
+  .addon-tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-mid);
+    margin-bottom: 0.65rem;
+  }
+
+  .addon-name {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    margin-bottom: 0.6rem;
+    line-height: 1.2;
+  }
+
+  .addon-desc {
+    font-size: 0.875rem;
+    color: var(--color-mid);
+    font-weight: 300;
+    line-height: 1.65;
+  }
+
+  /* ── Final CTA ────────────────────────────────────── */
+  .final-cta {
+    padding: 7rem 0;
+  }
+
+  .cta-inner {
+    max-width: 580px;
+  }
+
+  .cta-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 1.25rem;
+  }
+
+  .cta-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.75rem, 3.5vw, 3rem);
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    font-weight: 400;
+    margin-bottom: 1.25rem;
+  }
+
+  .cta-body {
+    font-size: 1rem;
+    color: var(--color-mid);
+    font-weight: 300;
+    line-height: 1.75;
+    margin-bottom: 2.25rem;
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--color-accent);
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.875rem 2rem;
+    letter-spacing: 0.01em;
+    border-radius: 2px;
+    transition: opacity 0.2s ease;
+  }
+  .cta-btn:hover {
+    opacity: 0.85;
+  }
+
+  /* ── Responsive ───────────────────────────────────── */
+  @media (max-width: 1024px) {
+    .pkg-card {
+      flex: 0 0 calc((100% - 1.5rem) / 2);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .page-hero {
+      padding: 3.5rem 0;
+    }
+    .packages {
+      padding: 3.5rem 0 4rem;
+    }
+    .pkg-card {
+      flex: 0 0 100%;
+    }
+    .addons-grid {
+      grid-template-columns: 1fr;
+    }
+    .addons {
+      padding: 3.5rem 0 4rem;
+    }
+    .final-cta {
+      padding: 4.5rem 0;
+    }
+  }
+</style>
