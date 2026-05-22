@@ -64,6 +64,108 @@ Il sito si apre su:
 http://localhost:4321/
 ```
 
+## Da MacBook con GitHub Desktop
+
+Questa e la soluzione consigliata per lavorare dal MacBook senza usare la cartella iCloud.
+
+### Prima volta sul MacBook
+
+1. Apri GitHub Desktop
+2. Vai su `File > Clone Repository`
+3. Seleziona il repository:
+
+```text
+AlessioSkadeBones/sito-alessia
+```
+
+4. Scegli una cartella locale sul MacBook, per esempio:
+
+```text
+Documents/Siti/sito-alessia
+```
+
+Meglio non usare iCloud per questa cartella.
+
+5. Clicca `Clone`
+
+6. Apri il Terminale nella cartella appena clonata:
+
+```bash
+cd ~/Documents/Siti/sito-alessia
+```
+
+7. Installa le dipendenze:
+
+```bash
+npm install
+```
+
+8. Avvia il sito:
+
+```bash
+npm run dev
+```
+
+9. Apri il browser su:
+
+```text
+http://localhost:4321/
+```
+
+### Ogni volta che inizi a lavorare dal MacBook
+
+1. Apri GitHub Desktop
+2. Apri il repository `sito-alessia`
+3. Clicca `Fetch origin`
+4. Se compare `Pull origin`, cliccalo
+5. Apri il Terminale nella cartella del progetto:
+
+```bash
+cd ~/Documents/Siti/sito-alessia
+```
+
+6. Avvia il sito:
+
+```bash
+npm run dev
+```
+
+### Quando hai finito di lavorare dal MacBook
+
+1. Controlla le modifiche in GitHub Desktop
+2. Scrivi un messaggio nel campo `Summary`, per esempio:
+
+```text
+Aggiorna contenuti sito
+```
+
+3. Clicca `Commit to main`
+4. Clicca `Push origin`
+
+In questo modo le modifiche finiscono su GitHub e saranno disponibili anche sul Mac fisso.
+
+## Regola importante tra Mac fisso e MacBook
+
+Prima di iniziare a lavorare:
+
+```text
+Pull / Fetch origin
+```
+
+Dopo aver finito di lavorare:
+
+```text
+Commit + Push origin
+```
+
+In pratica:
+
+```text
+Mac fisso -> lavori -> push
+MacBook -> pull -> lavori -> push
+Mac fisso -> pull
+```
+
 ## Ogni volta che riprendi a lavorare
 
 ```bash
