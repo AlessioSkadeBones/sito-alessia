@@ -11,6 +11,10 @@ const navLinks = [
   <div class="container">
     <a href="/" class="logo" aria-label="Alessio Cervara — Home">
       <img src="/logo.png" alt="Alessio Cervara" class="logo-img" height="72" />
+      <span class="logo-text">
+        <strong>Alessio Cervara</strong>
+        <span>Meta &amp; Pinterest Ads</span>
+      </span>
     </a>
 
     <nav class="nav" id="main-nav" aria-label="Navigazione principale">
@@ -66,6 +70,7 @@ const navLinks = [
   .logo {
     display: flex;
     align-items: center;
+    gap: 0.85rem;
     flex-shrink: 0;
     transition: opacity 0.2s ease;
   }
@@ -74,6 +79,26 @@ const navLinks = [
     display: block;
     height: 72px;
     width: auto;
+  }
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.05rem;
+    line-height: 1.1;
+  }
+  .logo-text strong {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    color: var(--color-text);
+  }
+  .logo-text span {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-mid);
   }
 
   .nav {
@@ -139,6 +164,12 @@ const navLinks = [
   }
 
   @media (max-width: 768px) {
+    .logo-img {
+      height: 60px;
+    }
+    .logo-text span {
+      display: none;
+    }
     .nav {
       display: none;
       position: absolute;

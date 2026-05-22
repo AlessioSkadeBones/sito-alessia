@@ -1,4 +1,6 @@
 ---
+import { hasIubendaCookieBanner, legalConfig } from '../config/legal';
+
 const year = new Date().getFullYear();
 ---
 
@@ -9,9 +11,9 @@ const year = new Date().getFullYear();
         <a href="/" class="footer-logo" aria-label="Alessio Cervara — Home">
           <img src="/logo.png" alt="Alessio Cervara" class="footer-logo-img" height="52" />
         </a>
+        <h2 class="footer-name">Alessio Cervara</h2>
         <p class="footer-tagline">
-          Meta &amp; Pinterest Ads Specialist<br />
-          per e-commerce italiani
+          Meta &amp; Pinterest Ads Specialist per e-commerce, brand lifestyle e local business italiani.
         </p>
       </div>
 
@@ -36,6 +38,40 @@ const year = new Date().getFullYear();
           LinkedIn →
         </a>
       </div>
+
+      <div class="footer-legal">
+        <p class="footer-nav-label">Policy</p>
+        <a
+          href={legalConfig.privacyPolicyUrl || '#'}
+          class:list={[
+            'iubenda-nostyle no-brand iubenda-noiframe iubenda-embed',
+            { 'is-disabled': !legalConfig.privacyPolicyUrl },
+          ]}
+          title="Privacy Policy"
+          aria-disabled={!legalConfig.privacyPolicyUrl}
+        >
+          Privacy Policy
+        </a>
+        <a
+          href={legalConfig.cookiePolicyUrl || '#'}
+          class:list={[
+            'iubenda-nostyle no-brand iubenda-noiframe iubenda-embed',
+            { 'is-disabled': !legalConfig.cookiePolicyUrl },
+          ]}
+          title="Cookie Policy"
+          aria-disabled={!legalConfig.cookiePolicyUrl}
+        >
+          Cookie Policy
+        </a>
+        <button
+          type="button"
+          class="footer-cookie-prefs"
+          data-cookie-preferences
+          disabled={!hasIubendaCookieBanner}
+        >
+          Preferenze cookie
+        </button>
+      </div>
     </div>
 
     <div class="footer-bottom">
@@ -53,7 +89,7 @@ const year = new Date().getFullYear();
 
   .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 3rem;
     margin-bottom: 3rem;
   }
@@ -69,12 +105,21 @@ const year = new Date().getFullYear();
     height: 52px;
     width: auto;
   }
+  .footer-name {
+    font-family: var(--font-serif);
+    font-size: 1.45rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
 
   .footer-tagline {
     font-size: 0.875rem;
     color: var(--color-mid);
     line-height: 1.6;
     font-weight: 300;
+    max-width: 360px;
   }
 
   .footer-nav-label {
@@ -94,24 +139,43 @@ const year = new Date().getFullYear();
   }
 
   .footer-nav a,
-  .footer-contact a {
+  .footer-contact a,
+  .footer-legal a,
+  .footer-cookie-prefs {
     font-size: 0.875rem;
     color: var(--color-mid);
     transition: color 0.2s ease;
     display: block;
   }
   .footer-nav a:hover,
-  .footer-contact a:hover {
+  .footer-contact a:hover,
+  .footer-legal a:hover,
+  .footer-cookie-prefs:hover {
     color: var(--color-text);
   }
 
-  .footer-contact {
+  .footer-contact,
+  .footer-legal {
     display: flex;
     flex-direction: column;
     gap: 0.65rem;
   }
-  .footer-contact .footer-nav-label {
+  .footer-contact .footer-nav-label,
+  .footer-legal .footer-nav-label {
     margin-bottom: 1rem;
+  }
+  .footer-cookie-prefs {
+    padding: 0;
+    border: none;
+    background: transparent;
+    font-family: var(--font-sans);
+    text-align: left;
+    cursor: pointer;
+  }
+  .footer-legal .is-disabled,
+  .footer-cookie-prefs:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
   }
 
   .footer-bottom {

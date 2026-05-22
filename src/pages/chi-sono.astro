@@ -9,18 +9,44 @@ import Layout from '../layouts/Layout.astro';
     <div class="container hero-inner">
       <div class="hero-text">
         <p class="eyebrow hero-reveal" style="animation-delay: 0ms">Chi sono</p>
-        <h1 class="hero-headline hero-reveal" style="animation-delay: 150ms">Ciao, sono Alessio.</h1>
-        <p class="hero-sub hero-reveal" style="animation-delay: 300ms">Meta Ads Specialist. Lavoro con e-commerce e local business italiani per trasformare il budget pubblicitario in fatturato reale.</p>
+        <h1 class="hero-headline hero-reveal" style="animation-delay: 150ms">Ciao, sono Alessio Cervara.</h1>
+        <p class="hero-sub hero-reveal" style="animation-delay: 300ms">Aiuto e-commerce, brand lifestyle e local business a trasformare Meta Ads in un canale di acquisizione più stabile, leggibile e sostenibile.</p>
+        <div class="hero-points hero-reveal" style="animation-delay: 450ms">
+          <span>Meta Ads</span>
+          <span>Pinterest Ads</span>
+          <span>Strategia creativa</span>
+        </div>
       </div>
-      <div class="hero-photo hero-reveal" style="animation-delay: 200ms">
-        <img
-          src="/foto profilo.png"
-          alt="Alessio Cervara — Meta Ads Specialist"
-          class="profile-photo"
-          width="280"
-          height="360"
-          loading="eager"
-        />
+      <figure class="hero-photo hero-reveal" style="animation-delay: 200ms">
+        <div class="photo-frame">
+          <img
+            src="/foto profilo.png"
+            alt="Alessio Cervara — Meta Ads Specialist"
+            class="profile-photo"
+            width="520"
+            height="640"
+            loading="eager"
+          />
+        </div>
+        <figcaption>
+          <span>Freelance specialist</span>
+          <strong>Seguo personalmente strategia, dati e creatività.</strong>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="intro">
+    <div class="container intro-grid">
+      <div class="intro-heading animate-fade-up">
+        <p class="eyebrow">Il mio modo di lavorare</p>
+        <h2 class="section-title">Non sono un'agenzia. Sono il professionista che entra nei numeri con te.</h2>
+      </div>
+      <div class="intro-body animate-stagger">
+        <p class="intro-lead animate-stagger-item">Lavoro con un numero limitato di clienti alla volta, per poter seguire ogni account con attenzione reale: campagne, margini, creatività, funnel e decisioni operative.</p>
+        <p class="animate-stagger-item">Il mio obiettivo non è riempirti di report o cambiare campagne ogni giorno. Il mio lavoro è capire dove il budget produce valore, dove si disperde e quali test possono spostare davvero il risultato.</p>
+        <p class="animate-stagger-item">Quando serve, metto mano alla struttura advertising. Quando il problema è fuori da Meta, lo dico: offerta, pagina prodotto, messaggio, creatività o percorso d'acquisto.</p>
       </div>
     </div>
   </section>
@@ -58,13 +84,26 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- TESTO -->
-  <section class="about">
-    <div class="container about-inner">
-      <div class="about-body">
-        <p class="animate-fade-up">Non sono un'agenzia. Sono un professionista che segue personalmente ogni account, conosce i dati a memoria e lavora con un obiettivo solo: far crescere il tuo business.</p>
-        <p class="animate-fade-up">Ho iniziato a fare advertising quando i campaign manager si ottimizzavano a mano e gli algoritmi erano ancora una promessa. Da allora ho gestito oltre tre milioni di euro di budget per brand italiani di moda, lusso, pet e lifestyle — senza mai delegare la parte strategica.</p>
-        <p class="animate-fade-up">Il mio approccio è semplice: broad targeting, creatività come leva principale, decisioni basate sui dati. Niente ottimizzazioni a sensazione, niente reporting che nasconde i problemi.</p>
+  <!-- ESPERIENZA -->
+  <section class="experience">
+    <div class="container experience-grid">
+      <div class="experience-heading animate-fade-up">
+        <p class="eyebrow">Esperienza</p>
+        <h2 class="section-title">Dai primi campaign manager agli account guidati dagli algoritmi.</h2>
+      </div>
+      <div class="experience-body animate-stagger">
+        <div class="experience-row animate-stagger-item">
+          <span>01</span>
+          <p>Ho iniziato a fare advertising quando molte ottimizzazioni si facevano ancora a mano e ogni test richiedeva lettura, pazienza e metodo.</p>
+        </div>
+        <div class="experience-row animate-stagger-item">
+          <span>02</span>
+          <p>Negli anni ho gestito oltre tre milioni di euro di budget per brand italiani di moda, lusso, pet, lifestyle e attività locali.</p>
+        </div>
+        <div class="experience-row animate-stagger-item">
+          <span>03</span>
+          <p>Oggi lavoro con una logica semplice: meno complessità inutile, più qualità nei segnali, nelle creatività e nelle decisioni.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -117,13 +156,13 @@ import Layout from '../layouts/Layout.astro';
 
   /* HERO */
   .hero {
-    padding: 6rem 0 4rem;
+    padding: 6rem 0 5rem;
     border-bottom: 1px solid var(--color-divider);
   }
   .hero-inner {
     display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 4rem;
+    grid-template-columns: minmax(0, 1fr) minmax(340px, 420px);
+    gap: 5rem;
     align-items: center;
   }
   .hero-headline {
@@ -139,15 +178,67 @@ import Layout from '../layouts/Layout.astro';
     color: var(--color-mid);
     font-weight: 300;
     line-height: 1.7;
-    max-width: 480px;
+    max-width: 560px;
+    margin-bottom: 2rem;
+  }
+  .hero-points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .hero-points span {
+    padding: 0.55rem 0.85rem;
+    border: 1px solid var(--color-divider);
+    color: var(--color-mid);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .hero-photo {
+    margin: 0;
+    position: relative;
+  }
+  .photo-frame {
+    position: relative;
+    padding: 1rem;
+    border: 1px solid var(--color-divider);
+    background: rgba(255, 255, 255, 0.16);
+  }
+  .photo-frame::before {
+    content: '';
+    position: absolute;
+    inset: -1.25rem 1.25rem 1.25rem -1.25rem;
+    border: 1px solid var(--color-accent);
+    opacity: 0.5;
+    z-index: -1;
   }
   .profile-photo {
     display: block;
-    width: 280px;
-    height: 360px;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    height: auto;
     object-fit: cover;
-    object-position: center top;
-    flex-shrink: 0;
+    object-position: center 34%;
+  }
+  .hero-photo figcaption {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 1.25rem;
+    padding-top: 1rem;
+    align-items: baseline;
+  }
+  .hero-photo figcaption span {
+    font-size: 0.7rem;
+    color: var(--color-mid);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .hero-photo figcaption strong {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 1.35;
   }
 
   /* STATS */
@@ -188,28 +279,63 @@ import Layout from '../layouts/Layout.astro';
     line-height: 1.8;
   }
 
-  /* ABOUT */
-  .about {
+  /* INTRO */
+  .intro,
+  .experience {
     padding: 6rem 0;
     border-bottom: 1px solid var(--color-divider);
   }
-  .about-inner {
-    max-width: 640px;
+  .intro-grid,
+  .experience-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 5rem;
+    align-items: start;
   }
-  .about-body {
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 400;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+  }
+  .intro-body {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
   }
-  .about-body p {
+  .intro-body p {
     font-size: 1.05rem;
     font-weight: 300;
     line-height: 1.8;
     color: var(--color-text);
   }
-  .about-body p:first-child {
+  .intro-body .intro-lead {
     font-size: 1.2rem;
     font-weight: 400;
+  }
+
+  /* EXPERIENCE */
+  .experience-body {
+    border-top: 1px solid var(--color-divider);
+  }
+  .experience-row {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 2rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--color-divider);
+  }
+  .experience-row span {
+    font-family: var(--font-serif);
+    color: var(--color-accent);
+    font-style: italic;
+  }
+  .experience-row p {
+    font-size: 1rem;
+    color: var(--color-mid);
+    font-weight: 300;
+    line-height: 1.8;
   }
 
   /* APPROACH */
@@ -291,8 +417,33 @@ import Layout from '../layouts/Layout.astro';
       grid-template-columns: 1fr;
       gap: 2.5rem;
     }
-    .hero-photo { order: -1; }
-    .photo-placeholder { width: 140px; height: 180px; }
+    .hero-photo {
+      order: -1;
+      max-width: 320px;
+    }
+    .photo-frame::before {
+      inset: -0.8rem 0.8rem 0.8rem -0.8rem;
+    }
+    .hero-photo figcaption {
+      grid-template-columns: 1fr;
+      gap: 0.35rem;
+    }
+    .hero-points span {
+      font-size: 0.68rem;
+    }
+    .intro,
+    .experience {
+      padding: 4.5rem 0;
+    }
+    .intro-grid,
+    .experience-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    .experience-row {
+      grid-template-columns: 50px 1fr;
+      gap: 1rem;
+    }
     .stats-grid { grid-template-columns: 1fr; gap: 0; }
     .approach-grid { grid-template-columns: 1fr; gap: 0; }
     .approach-card { padding: 1.75rem 0; }

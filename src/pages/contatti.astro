@@ -8,8 +8,32 @@ import Layout from '../layouts/Layout.astro';
   <section class="hero">
     <div class="container">
       <p class="eyebrow hero-reveal" style="animation-delay: 0ms">Contatti</p>
-      <h1 class="hero-headline hero-reveal" style="animation-delay: 150ms">Parliamoci.</h1>
-      <p class="hero-sub hero-reveal" style="animation-delay: 300ms">Raccontami il tuo progetto. Ti rispondo entro 24 ore con una valutazione onesta su come posso aiutarti.</p>
+      <h1 class="hero-headline hero-reveal" style="animation-delay: 150ms">Raccontami dove vuoi portare il tuo business.</h1>
+      <p class="hero-sub hero-reveal" style="animation-delay: 300ms">Ti rispondo entro 24 ore con una valutazione onesta: se posso aiutarti, ti dico da dove partire. Se non sono la persona giusta, te lo dico lo stesso.</p>
+    </div>
+  </section>
+
+  <!-- BEFORE CONTACT -->
+  <section class="before">
+    <div class="container before-grid">
+      <div class="before-heading animate-fade-up">
+        <p class="eyebrow">Prima della call</p>
+        <h2 class="section-title">Mi aiuta capire subito il contesto, non solo il budget.</h2>
+      </div>
+      <div class="before-list animate-stagger">
+        <div class="before-row animate-stagger-item">
+          <span>Canali attivi</span>
+          <p>Meta Ads, Google Ads, Pinterest, organico o altri canali che state gia usando.</p>
+        </div>
+        <div class="before-row animate-stagger-item">
+          <span>Obiettivi</span>
+          <p>Vendite, lead, prenotazioni, crescita e-commerce, lancio prodotto o miglioramento dei costi.</p>
+        </div>
+        <div class="before-row animate-stagger-item">
+          <span>Problemi attuali</span>
+          <p>Risultati instabili, ROAS poco chiaro, creativita deboli, tracciamento, funnel o margini.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -90,6 +114,9 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- INFO -->
       <aside class="info-col animate-stagger">
+        <div class="info-note info-note-strong animate-stagger-item">
+          <p>Dopo il messaggio leggo il progetto, ti rispondo via email e, se ha senso, fissiamo una call conoscitiva di 30 minuti.</p>
+        </div>
         <div class="info-block animate-stagger-item">
           <p class="info-label">Email</p>
           <a href="mailto:alessiocervara@live.it" class="info-value">alessiocervara@live.it</a>
@@ -98,8 +125,13 @@ import Layout from '../layouts/Layout.astro';
           <p class="info-label">LinkedIn</p>
           <a href="https://www.linkedin.com/in/alessiocervara" target="_blank" rel="noopener noreferrer" class="info-value">linkedin.com/in/alessiocervara →</a>
         </div>
-        <div class="info-note animate-stagger-item">
-          <p>Preferisci una call diretta? Scrivimi su LinkedIn o via email per fissare 30 minuti gratuiti.</p>
+        <div class="fit-box animate-stagger-item">
+          <p class="info-label">Progetti adatti</p>
+          <ul>
+            <li>E-commerce con offerta gia validata</li>
+            <li>Local business con obiettivi misurabili</li>
+            <li>Brand che vogliono migliorare creativita e dati</li>
+          </ul>
         </div>
         <div class="info-img-wrap animate-stagger-item">
           <img
@@ -192,6 +224,48 @@ import Layout from '../layouts/Layout.astro';
     font-weight: 300;
     line-height: 1.7;
     max-width: 520px;
+  }
+
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-weight: 400;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+  }
+
+  /* BEFORE */
+  .before {
+    padding: 5rem 0;
+    border-bottom: 1px solid var(--color-divider);
+  }
+  .before-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .before-list {
+    border-top: 1px solid var(--color-divider);
+  }
+  .before-row {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 2rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--color-divider);
+  }
+  .before-row span {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    color: var(--color-text);
+    line-height: 1.25;
+  }
+  .before-row p {
+    font-size: 0.9rem;
+    color: var(--color-mid);
+    font-weight: 300;
+    line-height: 1.75;
   }
 
   /* MAIN LAYOUT */
@@ -359,6 +433,36 @@ import Layout from '../layouts/Layout.astro';
     font-weight: 300;
     line-height: 1.75;
   }
+  .info-note-strong p {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    color: var(--color-text);
+    font-weight: 400;
+    line-height: 1.45;
+  }
+  .fit-box {
+    border-top: 1px solid var(--color-divider);
+    padding-top: 1.25rem;
+  }
+  .fit-box ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .fit-box li {
+    font-size: 0.875rem;
+    color: var(--color-mid);
+    font-weight: 300;
+    line-height: 1.55;
+    display: flex;
+    gap: 0.55rem;
+  }
+  .fit-box li::before {
+    content: '—';
+    color: var(--color-divider);
+    flex-shrink: 0;
+  }
   .info-img-wrap {
     border: 1px solid var(--color-divider);
     overflow: hidden;
@@ -375,6 +479,10 @@ import Layout from '../layouts/Layout.astro';
 
   /* MOBILE */
   @media (max-width: 900px) {
+    .before-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
     .main-inner {
       grid-template-columns: 1fr;
       gap: 3rem;
@@ -395,6 +503,13 @@ import Layout from '../layouts/Layout.astro';
     }
     .main {
       padding: 3.5rem 0 5rem;
+    }
+    .before {
+      padding: 3.5rem 0;
+    }
+    .before-row {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
     }
     .field-row {
       grid-template-columns: 1fr;

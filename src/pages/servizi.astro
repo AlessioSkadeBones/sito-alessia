@@ -105,6 +105,75 @@ const addons = [
     ],
   },
 ];
+
+const startingPoints = [
+  {
+    label: 'Hai già campagne attive, ma risultati poco stabili',
+    suggestion: 'Parti da Growth: serve continuità su struttura, creatività e ottimizzazione.',
+  },
+  {
+    label: 'Stai iniziando e vuoi una gestione ordinata',
+    suggestion: 'Essential è il punto giusto per avere metodo, controllo budget e priorità chiare.',
+  },
+  {
+    label: 'Vuoi integrare advertising, organico e direzione marketing',
+    suggestion: 'Full Marketing o Performance hanno più senso se il problema non è solo Meta Ads.',
+  },
+];
+
+const faqs = [
+  {
+    question: 'Il budget pubblicitario è incluso?',
+    answer: 'No. La fee copre strategia, gestione, ottimizzazione e report. Il budget ADV resta separato e viene investito direttamente dagli account del cliente.',
+  },
+  {
+    question: 'Quanto dura una collaborazione?',
+    answer: 'Lavoro meglio su orizzonti di almeno tre mesi: il primo serve a leggere dati e sistemare le basi, i successivi a validare test e migliorare le decisioni.',
+  },
+  {
+    question: 'Ti occupi anche delle creatività?',
+    answer: 'Mi occupo della direzione creativa: hook, angoli, brief, messaggi e lettura dei risultati. La produzione foto/video avanzata si valuta a parte.',
+  },
+  {
+    question: 'Se non so quale pacchetto scegliere?',
+    answer: 'Nessun problema. Mi racconti il progetto e ti indico la soluzione più adatta, anche se significa partire da qualcosa di più semplice.',
+  },
+];
+
+const serviceDetails = [
+  {
+    id: 'meta-ads-ecommerce',
+    eyebrow: 'Meta Ads E-commerce',
+    title: 'Campagne pensate per vendere prodotti, non solo per generare traffico.',
+    body: 'Lavoro su struttura account, creatività, offerte, catalogo, retargeting e lettura dei margini. L\'obiettivo è capire quali campagne portano fatturato sostenibile e quali stanno solo consumando budget.',
+    fit: ['Brand con uno shop già attivo', 'Prodotti con margini e offerta chiari', 'Bisogno di rendere Meta un canale più stabile'],
+    work: ['Audit account e tracking', 'Piano test creativi e commerciali', 'Ottimizzazione campagne e budget', 'Report con prossime azioni'],
+  },
+  {
+    id: 'meta-ads-local',
+    eyebrow: 'Meta Ads Local Business',
+    title: 'Lead, prenotazioni e richieste da persone vicine al tuo business.',
+    body: 'Per attività locali lavoro su messaggi chiari, pubblico corretto, offerte credibili e percorsi semplici: l\'obiettivo non è avere più like, ma più contatti utili.',
+    fit: ['Attivita con area geografica definita', 'Obiettivi come lead, prenotazioni o richieste', 'Necessita di misurare meglio il costo contatto'],
+    work: ['Strategia local e obiettivi', 'Campagne lead o traffico qualificato', 'Creatività e copy orientati alla richiesta', 'Lettura dei contatti generati'],
+  },
+  {
+    id: 'pinterest-ads',
+    eyebrow: 'Pinterest Ads',
+    title: 'Un canale visivo per intercettare domanda prima che diventi acquisto.',
+    body: 'Pinterest funziona quando prodotto, immagine e intenzione sono allineati. Lo uso soprattutto per brand moda, lifestyle, arredamento, beauty e prodotti ad alto impatto visivo.',
+    fit: ['Brand visivi con asset fotografici forti', 'E-commerce moda, lifestyle, beauty o casa', 'Strategia da integrare a Meta Ads'],
+    work: ['Setup campagne Pinterest', 'Selezione creatività e formati', 'Keyword, interessi e catalogo', 'Report integrato con Meta'],
+  },
+  {
+    id: 'social-media-management',
+    eyebrow: 'Social Media Management',
+    title: 'Contenuti organici coordinati con la strategia advertising.',
+    body: 'Non tratto i social organici come un calendario da riempire. Lavoro su rubriche, messaggi, formati e coerenza con ciò che le campagne stanno comunicando.',
+    fit: ['Brand che vogliono una presenza più coerente', 'Necessità di coordinare organico e paid', 'Team che ha asset ma manca di direzione editoriale'],
+    work: ['Piano editoriale mensile', 'Rubriche, copy e format', 'Coordinamento con campagne advertising', 'Report con insight e prossime azioni'],
+  },
+];
 ---
 
 <Layout
@@ -123,6 +192,68 @@ const addons = [
           Ogni pacchetto è pensato per una fase diversa di crescita.<br />
           Nessuna soluzione unica per tutti — solo quello che serve davvero.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service details -->
+  <section class="service-details">
+    <div class="container">
+      <div class="service-details-heading animate-fade-up">
+        <p class="eyebrow">Aree di intervento</p>
+        <h2 class="section-title">Ogni servizio ha obiettivi, segnali e priorità diverse.</h2>
+      </div>
+      <div class="service-detail-list animate-stagger">
+        {
+          serviceDetails.map((service) => (
+            <article id={service.id} class="service-detail animate-stagger-item">
+              <div class="service-detail-main">
+                <p class="service-detail-eyebrow">{service.eyebrow}</p>
+                <h3>{service.title}</h3>
+                <p>{service.body}</p>
+                <a href="/contatti" class="service-detail-cta">Parliamone</a>
+              </div>
+              <div class="service-detail-side">
+                <div>
+                  <span>Per chi è</span>
+                  <ul>
+                    {service.fit.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <span>Cosa lavoro</span>
+                  <ul>
+                    {service.work.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Starting point -->
+  <section class="starting">
+    <div class="container starting-grid">
+      <div class="starting-heading animate-fade-up">
+        <p class="eyebrow">Da dove partire</p>
+        <h2 class="section-title">Il servizio giusto dipende dal punto in cui sei adesso.</h2>
+      </div>
+      <div class="starting-list animate-stagger">
+        {
+          startingPoints.map((item) => (
+            <article class="starting-row animate-stagger-item">
+              <h3>{item.label}</h3>
+              <p>{item.suggestion}</p>
+            </article>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -197,6 +328,26 @@ const addons = [
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container faq-grid">
+      <div class="faq-heading animate-fade-up">
+        <p class="eyebrow">Domande frequenti</p>
+        <h2 class="section-title">Prima di scegliere, chiariamo le cose importanti.</h2>
+      </div>
+      <div class="faq-list animate-stagger">
+        {
+          faqs.map((faq) => (
+            <article class="faq-item animate-stagger-item">
+              <h3>{faq.question}</h3>
+              <p>{faq.answer}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
   <!-- Final CTA -->
   <section class="final-cta">
     <div class="container">
@@ -247,6 +398,170 @@ const addons = [
     font-size: 1rem;
     font-weight: 300;
     color: var(--color-mid);
+    line-height: 1.75;
+  }
+
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    font-weight: 400;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+  }
+
+  /* ── Service details ─────────────────────────────── */
+  .service-details {
+    padding: 5rem 0;
+    border-bottom: 1px solid var(--color-divider);
+  }
+
+  .service-details-heading {
+    max-width: 760px;
+    margin-bottom: 3.5rem;
+  }
+
+  .service-detail-list {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--color-divider);
+  }
+
+  .service-detail {
+    scroll-margin-top: 96px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 420px;
+    gap: 5rem;
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--color-divider);
+    align-items: start;
+  }
+
+  .service-detail-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+  }
+
+  .service-detail-main h3 {
+    font-family: var(--font-serif);
+    font-size: clamp(1.8rem, 3.5vw, 3rem);
+    font-weight: 400;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    max-width: 720px;
+    margin-bottom: 1.25rem;
+  }
+
+  .service-detail-main > p {
+    font-size: 1rem;
+    color: var(--color-mid);
+    font-weight: 300;
+    line-height: 1.85;
+    max-width: 620px;
+  }
+
+  .service-detail-cta {
+    display: inline-flex;
+    margin-top: 1.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text);
+    padding-bottom: 1px;
+    border-bottom: 1px solid var(--color-text);
+    transition: opacity 0.2s ease;
+  }
+  .service-detail-cta:hover {
+    opacity: 0.5;
+  }
+
+  .service-detail-side {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .service-detail-side > div {
+    border: 1px solid var(--color-divider);
+    padding: 1.5rem;
+    min-height: 100%;
+  }
+
+  .service-detail-side span {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-mid);
+    margin-bottom: 1rem;
+  }
+
+  .service-detail-side ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .service-detail-side li {
+    display: flex;
+    gap: 0.55rem;
+    font-size: 0.85rem;
+    color: var(--color-mid);
+    font-weight: 300;
+    line-height: 1.55;
+  }
+
+  .service-detail-side li::before {
+    content: '—';
+    color: var(--color-divider);
+    flex-shrink: 0;
+  }
+
+  /* ── Starting point ──────────────────────────────── */
+  .starting,
+  .faq {
+    padding: 5rem 0;
+    border-bottom: 1px solid var(--color-divider);
+  }
+
+  .starting-grid,
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .starting-list,
+  .faq-list {
+    border-top: 1px solid var(--color-divider);
+  }
+
+  .starting-row,
+  .faq-item {
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--color-divider);
+  }
+
+  .starting-row h3,
+  .faq-item h3 {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.65rem;
+  }
+
+  .starting-row p,
+  .faq-item p {
+    font-size: 0.9rem;
+    color: var(--color-mid);
+    font-weight: 300;
     line-height: 1.75;
   }
 
@@ -529,6 +844,10 @@ const addons = [
 
   /* ── Responsive ───────────────────────────────────── */
   @media (max-width: 1024px) {
+    .service-detail {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
     .pkg-card {
       flex: 0 0 calc((100% - 1.5rem) / 2);
     }
@@ -537,6 +856,25 @@ const addons = [
   @media (max-width: 640px) {
     .page-hero {
       padding: 3.5rem 0;
+    }
+    .service-details {
+      padding: 3.5rem 0;
+    }
+    .service-detail {
+      scroll-margin-top: 82px;
+      padding: 2.5rem 0;
+    }
+    .service-detail-side {
+      grid-template-columns: 1fr;
+    }
+    .starting,
+    .faq {
+      padding: 3.5rem 0;
+    }
+    .starting-grid,
+    .faq-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
     }
     .packages {
       padding: 3.5rem 0 4rem;

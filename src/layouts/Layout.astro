@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { hasIubendaCookieBanner, legalConfig } from '../config/legal';
 import '../styles/global.css';
 import '../styles/animations.css';
 
@@ -29,6 +30,39 @@ const {
       href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;1,14..32,400&display=swap"
       rel="stylesheet"
     />
+    {
+      hasIubendaCookieBanner && (
+        <>
+          <script
+            is:inline
+            define:vars={{
+              iubendaSiteId: legalConfig.iubendaSiteId,
+              iubendaCookiePolicyId: legalConfig.iubendaCookiePolicyId,
+            }}
+          >
+            {`
+              var _iub = _iub || [];
+              _iub.csConfiguration = {
+                siteId: iubendaSiteId,
+                cookiePolicyId: iubendaCookiePolicyId,
+                lang: "it",
+                storage: { useSiteId: true }
+              };
+            `}
+          </script>
+          <script
+            is:inline
+            src="https://cs.iubenda.com/autoblocking/0.js"
+          />
+          <script
+            is:inline
+            src="//cdn.iubenda.com/cs/iubenda_cs.js"
+            charset="UTF-8"
+            async
+          />
+        </>
+      )
+    }
   </head>
   <body>
     <Header />
@@ -38,6 +72,12 @@ const {
     <Footer />
     <script>
       import '../scripts/animations.js';
+
+      document.querySelectorAll('[data-cookie-preferences]').forEach((button) => {
+        button.addEventListener('click', () => {
+          window?._iub?.cs?.api?.openPreferences?.();
+        });
+      });
     </script>
   </body>
 </html>
