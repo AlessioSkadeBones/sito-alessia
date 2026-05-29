@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;1,14..32,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;1,14..32,400&display=swap');
 
 :root {
-  --color-bg: #F7F4EE;
-  --color-text: #1A1714;
-  --color-mid: #7A6F62;
-  --color-accent: #C24A2C;
-  --color-divider: #DCD5C8;
+  --color-bg: #0F0F0E;
+  --color-text: #F2EDE3;
+  --color-mid: #8A8378;
+  --color-accent: #D9744A;
+  --color-divider: #2A2622;
 
-  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 
   --max-width: 1200px;

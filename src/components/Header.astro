@@ -10,10 +10,12 @@ const navLinks = [
 <header class="header">
   <div class="container">
     <a href="/" class="logo" aria-label="Alessio Cervara — Home">
-      <img src="/logo.png" alt="Alessio Cervara" class="logo-img" height="72" />
+      <span class="logo-mark" aria-hidden="true">
+        A<span class="logo-mark-c">C</span>
+      </span>
       <span class="logo-text">
         <strong>Alessio Cervara</strong>
-        <span>Meta &amp; Pinterest Ads</span>
+        <span>Meta Ads Specialist</span>
       </span>
     </a>
 
@@ -75,10 +77,20 @@ const navLinks = [
     transition: opacity 0.2s ease;
   }
   .logo:hover { opacity: 0.65; }
-  .logo-img {
-    display: block;
-    height: 72px;
-    width: auto;
+  .logo-mark {
+    font-family: var(--font-serif);
+    font-size: 2.1rem;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--color-text);
+    display: inline-block;
+    padding: 0.15rem 0 0;
+  }
+  .logo-mark-c {
+    color: var(--color-accent);
+    margin-left: -0.18em;
+    font-style: italic;
   }
   .logo-text {
     display: flex;
@@ -164,8 +176,8 @@ const navLinks = [
   }
 
   @media (max-width: 768px) {
-    .logo-img {
-      height: 60px;
+    .logo-mark {
+      font-size: 1.75rem;
     }
     .logo-text span {
       display: none;
